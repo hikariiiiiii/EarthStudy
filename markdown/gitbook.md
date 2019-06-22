@@ -284,6 +284,6 @@ $ gitbook build ./ ./docs
 $ git push origin master
 ```
 
-![1561198629301](G:\CODELIFE\workspace\EarthStudy\markdown\1561198629301.png)
+![1561198629301](1561198629301.png)
 
-![1561198657837](G:\CODELIFE\workspace\EarthStudy\markdown\1561198657837.png)
+![1561198657837](1561198657837.png)
