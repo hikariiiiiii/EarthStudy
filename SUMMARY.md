@@ -32,6 +32,6 @@
     * [LevelDB](database/leveldb.md)
     * [CouchDB](database/couchdb.md)
     * [Mysql](database/mysql.md)
-* [MarkDown](markdown/README.md)
+* [Markdown](markdown/README.md)
     * [markdown语法](markdown/markdown.md)
     * [GitBook](markdown/gitbook.md)
