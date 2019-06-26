@@ -11,8 +11,6 @@ GitBook 是一个使用 Git 和 Markdown 来构建书籍的工具。它可以将
 
 ![img](1530013121538020.jpg)
 
-----
-
 ## 安装
 
 环境：NodeJS(v4.0.0 及以上)
@@ -74,8 +72,6 @@ $ gitbook build
 ```
 $ gitbook serve
 ```
-
-----
 
 ## 使用
 
@@ -248,8 +244,6 @@ gitbook epub
 ```
 gitbook mobi
 ```
-----
-
 ## GitHub Pages
 
 GitHub Pages提供静态网站托管服务。

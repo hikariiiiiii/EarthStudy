@@ -1,6 +1,6 @@
 # Summary
 
-## 学习笔记 - By Hikari
+## 学习笔记 - By Heyaguang
 * [首页](README.md)
 * [GO语言](golang/README.md)
     * [语法基础](golang/base.md)
@@ -25,8 +25,8 @@
     * [共识排序](hyperledger/consensus.md)
     * [账本存储](hyperledger/ledger_storage.md)
     * [开发](hyperledger/develop.md)
-* [网络](network/README.md)
-    * [HTTP、TCP/IP、UDP协议](network/protocol.md)
+* [网络安全](network/README.md)
+    * [TCP/IP、UDP、HTTP协议](network/protocol.md)
     * [共识算法](network/consensus.md)
 * [数据库](database/README.md)
     * [LevelDB](database/leveldb.md)
