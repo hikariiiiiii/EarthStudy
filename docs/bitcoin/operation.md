@@ -60,6 +60,14 @@
 
 
 
+**根据目标地址区分的交易类型：**
+
+1. 支付到公钥Hash，Pay-To-PubkeyHash Tx .（**P2PKH** Tx）
+2. 支付到脚本Hash，Pay-To-ScriptHash Tx .（**P2SH** Tx）
+3. 挖矿交易（coinbase）
+
+
+
 ### 比特币的脚本
 
 可以为比特币支付设定条件
