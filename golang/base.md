@@ -8,7 +8,7 @@
 ## var
 包内、函数内
 
-```
+``` go
 var aa int = 3
 var (
 	aa int = 3
@@ -20,7 +20,7 @@ var aa, ss, bb = 3, “kkk”, true
 
 函数内
 
-```
+``` go
 aa, ss, bb := 3, “kkk”, true
 ```
 
@@ -31,7 +31,7 @@ byte（8位）, rune（32位）
 float32, float63, complex64, complex128
 
 ## const
-```
+``` go
 const aa int = 3
 const aa, ss, bb = 3, “kkk”, true
 const(
@@ -52,13 +52,13 @@ if、for、switch、select
 没有while，for即是while
 遍历可使用
 
-```
+``` go
 for i, v := range xxx {
 }
 ```
 
 ## 函数
-```
+``` go
 func function_name( [parameter list] ) [return_types / return parameter list]
 {
 	defer xxxx
@@ -69,7 +69,7 @@ func function_name( [parameter list] ) [return_types / return parameter list]
 ## Array
 数组是值类型，，长度不同类型不同，赋值即拷贝，一般不直接使用数组
 
-```
+``` go
 var variable_name [SIZE] variable_type
 variable_name = [SIZE] variable_type{v1, v2, v3}
 //SIZE为...时根据初始化元素的个数设置大小
@@ -78,13 +78,13 @@ variable_name = [SIZE] variable_type{v1, v2, v3}
 ## Slice
 声明：
 
-```
+``` go
 var s []Type        //nil 空切片
 ```
 
 初始化：
 
-```
+``` go
 m := []Type{ , , , , }
 m := make([]Type, len, cap)	//len长度，cap可达最大长度
 m := a[ s:e]	//a可以是已有的slice或数组，前闭后开
@@ -94,20 +94,20 @@ slice的len根据可读元素决定，cap根据开辟的内存决定
 
 读取元素：
 
-```
+``` go
 m[n]				//其中n不能超过len-1
 ```
 
 遍历：
 
-```
+``` go
 for i, v := range s {
 } 
 ```
 
 操作：
 
-```
+``` go
 append( s1, v1, v2 )    //若cap不够会重新开辟一个内存，并赋值原值过去
 append( s1, s2... )     //...将s2分解为一个个元素
 copy(s1, s2)        	//只将覆盖s1 len范围内的值
@@ -119,13 +119,13 @@ cap(s)					//返回可达最大长度
 
 声明：
 
-```
+``` go
 var m map[K]V         //nil
 ```
 
 初始化：
 
-```
+``` go
 m := map[K]V {
     k1 : v1
 }
@@ -134,21 +134,21 @@ m := make(map[K]V)     //EmptyMap
 
 读取：
 
-```
+``` go
 Map[K]=v
 value , ok := map[K]   //若找不到键值 ok为false
 ```
 
 遍历：
 
-```
+``` go
 for k, v := range m{
 }
 ```
 
 操作：
 
-```
+``` go
 delete(map , K)			//删除对应键值
 len(m)					//获取元素数量
 ```
@@ -161,7 +161,7 @@ range遍历string得到的是pos是字节坐标，不适合处理非unicode编�
 ## 结构体
 声明：
 
-```
+``` go
 type StructName struct{
    var1 int
    var2 *T
@@ -170,7 +170,7 @@ type StructName struct{
 
 初始化：
 
-```
+``` go
 var t StructName
 t = StructName {
   1, nil
@@ -179,7 +179,7 @@ t = StructName {
 
 使用new函数初始化：
 
-```
+``` go
 t = new(StructName)
 t.var1 = 1
 t.var2 = nil
@@ -187,7 +187,7 @@ t.var2 = nil
 
 使用工厂创建函数初始化：
 
-```
+``` go
 func createStruct(var1 int) *StructName {
 	return &StructName { var1, nil }   
 	//局部变量的地址也可以返回给别人用，内存分配在堆还是栈由编译器决定
@@ -196,7 +196,7 @@ func createStruct(var1 int) *StructName {
 
 为结构定义方法：
 
-```
+``` go
 // 指针接收者（要改变内容、结构过大、建议有指针接收者则保持一致性也使用指针接收者）
 	func (StructName *t) funcname { }
 // 值接收者
@@ -239,13 +239,13 @@ main包有一个可执行入口
 
 Type Assertion：将接口变量转换为指定实现者类型
 
-```
+``` go
   v, ok := i.(int)		//接口变量.(实现者类型/类型指针)
 ```
 
 Type Switch： 判断实现者类型/类型指针
 
-```
+``` go
   switch v := i.(type) {
   	case T1:
   		// TODO
@@ -256,7 +256,7 @@ Type Switch： 判断实现者类型/类型指针
 
 表示任何类型：
 
-```
+``` go
   v := interface{} 
 ```
 
@@ -289,7 +289,7 @@ PrintHeader/PrintFooter
 
 error接口用于实现自定义错误
 
-```
+``` go
 type error interface{
 	Error() string
 }
@@ -297,7 +297,7 @@ type error interface{
 
 判断错误类型，MyError为自定义错误类型
 
-```
+``` go
 if dError, ok = err.(*MyError); !ok{
 	painc("unknown err")
 }
@@ -312,7 +312,7 @@ else{
 ## recover
 在defer中使用recover()，来保护panic
 
-```
+``` go
 defer func(){
 	r := recover()
 	// TODO
@@ -326,7 +326,7 @@ defer func(){
 Go语言语法更易实现表格驱动测试
 
 ## 单元测试testing.T
-```
+``` go
 func TestTriangle(t *testing.T) {
 	tests := []struct{ a, b, c int }{
 		{3, 4, 5},
@@ -346,13 +346,13 @@ func TestTriangle(t *testing.T) {
 
 命令行运行：
 
-```
+``` bash
 go test .
 ```
 
 代码覆盖率：
 
-```
+``` bash
 go test -coverprofile=c.out
 go tool cover
 go tool cover -html=c.out
@@ -360,7 +360,7 @@ go tool cover -html=c.out
 
 
 ## 性能测试testing.B
-```
+``` go
 func BenchmarkSubstr(b *testing.B) {
 	s := "黑化肥挥发发灰会花飞灰化肥挥发发黑会飞花"
 	for i := 0; i < 13; i++ {
@@ -382,13 +382,13 @@ func BenchmarkSubstr(b *testing.B) {
 ```
 命令行运行 
 
-```
+``` bash
 go test -bench .
 ```
 
 性能分析：
 
-```
+``` bash
 go test -bench . -cpuprofile cpu.out
 go tool pprof cpu.out
 help
@@ -400,14 +400,14 @@ quit
 
 **1. 通过使用假的Request/Response**
 
-   ```
+   ``` go
    response := httptest.NewRecorder()
    request := httptest.NewRequest( http.MethodGet, "http://xxxxxxxxxx", nil)
    ```
 
 **2. 通过起服务器**
 
-```
+``` go
    server := httptest.NewServer( http.HandlerFunc(f))
    resp, _ := http.Get(server.URL)
 ```
@@ -415,19 +415,19 @@ quit
 ## 文档
 命令行运行 
 
-```
+``` bash
 go doc
 ```
 
 命令行指令帮助 
 
-```
+``` bash
 go help doc
 ```
 
 启动帮助文档服务器 
 
-```
+``` bash
 godoc -http :6060
 ```
 
@@ -460,7 +460,7 @@ Example是另一种测试，也可运行
 
 **Go语言：**goroutine
 
-```
+``` go
   go func() {
   	// TODO
   	runtime.Gosched();  //让出控制权
@@ -489,7 +489,7 @@ Example是另一种测试，也可运行
 
 - 使用-race来检测数据访问冲突 
 
-  ```
+  ``` bash
   go run -race xxxx.go
   ```
 
@@ -500,7 +500,7 @@ Example是另一种测试，也可运行
 
 声明：
 
-```
+``` go
 var c chan int			//可发可收
 var c chan<- int		//send only type 只能发送数据的channel
 var c <-chan int		//只能收取数据
@@ -508,14 +508,14 @@ var c <-chan int		//只能收取数据
 
 初始化：
 
-```
+``` go
 c := make(chan int)	
 c := make(chan int, 3)	//创建一个缓冲区大小为3的channel
 ```
 
 操作：
 
-```
+``` go
 c<-1				    //发送数据
 n := <-c		 		//收取数据
 close(c)				//关闭channel，之后再收取的数据都为数据类型的初始值 
@@ -532,7 +532,7 @@ for n := range c {
 ## WaitGroup
 利用WaitGroup判断协程工作是否完毕
 
-```
+``` go
 var wg = sync.WaitGroup
 wg.add(1)	    //添加任务数
 wg.done()	    //完成一个任务
@@ -542,7 +542,7 @@ wg.wait()		//挂起等待所有任务完成
 ## select
 利用select来进行调度，实现非阻塞式获取channel数据，select中若case不可运行且没有default则阻塞直到有case可运行
 
-```
+``` go
 select {
     case n:= <- c1
     case n:= <- c2
@@ -554,7 +554,7 @@ select {
 
 时间channel：
 
-```
+``` go
 time.After(10 * time.Second)	//倒计时
 time.Tick(time.Second)			//周期定时触发
 ```
@@ -566,7 +566,7 @@ MuteX
 Cond
 
 ## http标准库
-```
+``` go
 http.Get(“https://xxxxxxxxxxxxxx.com”)
 request, err := http.NewRequest(http.MethodGet,
 		"https://xxxxxxxxxxxxxxx.com", nil)

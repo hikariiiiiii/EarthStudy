@@ -59,7 +59,7 @@ RIPEMD：RIPEMD-128、RIPEMD-160、RIPEMD-256、RIPEMD-320
 
    ![1](1.png)
 
-   ![2](G:\CODELIFE\workspace\EarthStudy\cryptography\2.png)![3](G:\CODELIFE\workspace\EarthStudy\cryptography\3.png)
+   ![2](2.png)![3](3.png)
 
    	上图参与运算的都是32 bit的数，Wt是分组之后的报文，512 bit=32bit*16.
 
