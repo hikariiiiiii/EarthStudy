@@ -38,29 +38,35 @@
 
 ## **网络启动**
 
-1. 配置crypto-config.yaml，并使用crytogen生成公私钥和证书文件
+1. 配置crypto-config.yaml设置组织、节点、成员结构
 
-2. 配置configtx.yaml，并使用configtxgen生成系统链创世区块、生成通道创世交易、生成锚节点交易（可选）
+2. 使用crytogen生成公私钥和证书文件
 
-3. 创建docker-compose.yaml文件，配置order容器、各peer容器、cli容器
+3. 配置configtx.yaml设置联盟、系统链、组织的结构、组织和锚节点的访问地址和MSP地址
 
-4. 启动docker-compose
+4. 使用configtxgen生成系统链创世区块、生成通道创世交易、生成锚节点交易（可选）
+
+5. 创建docker-compose.yaml文件，配置order节点容器、各peer节点容器、cli容器
+
+6. 启动docker-compose
 
    ```bash
+   docker-compose up -d           //关闭是 docker-compose down
+   
    docker exec -it cli bash       //进入客户端容器(cli)控制台
    
-   peer                                   //与peer节点交互的工具
+   peer                           /与peer节点交互的工具
    ```
 
-5. 利用peer工具：
+7. 利用peer工具：
 
-   - 创建通道
+   - 利用通道创世交易创建通道
 
      ```bash
      peer channel create
      ```
 
-   - 将节点加入通道
+   - 将当前cli连接的peer节点加入通道
 
      ```bash
      peer channel join
@@ -113,6 +119,7 @@ configtxgen -profile OneOrgOrdererGenesis -outputBlock ./config/genesis.block
 ### 生成通道的创世交易
 ``` bash
 configtxgen -profile TwoOrgChannel -outputCreateChannelTx ./config/mychannel.tx -channelID mychannel
+configtxgen -profile TwoOrgChannel -outputCreateChannelTx ./config/assetschannel.tx -channelID assetschannel
 ```
 
 ### 生成组织关于通道的锚节点（主节点）交易
@@ -184,4 +191,78 @@ peer chaincode query -C assetschannel -n assets -c '{"Args":["queryUser", "user2
 peer chaincode query -C assetschannel -n assets -c '{"Args":["queryAssetHistory", "asset1"]}'
 peer chaincode query -C assetschannel -n assets -c '{"Args":["queryAssetHistory", "asset1", "all"]}'
 ```
+
+### 命令行模式的背书策略
+
+在链码实例化peer chaincode instantiate时，添加-P 参数值：
+
+```
+EXPR(E[,E...])
+EXPR = OR AND
+E = EXPR(E[,E...])
+MSP.ROLE
+MSP 组织名 org0MSP org1MSP
+ROLE admin member
+```
+
+示例：
+
+```bash
+-P “OR('org0MSP.member','org1MSP.admin')”
+```
+
+### 打印日志
+
+```bash
+docker ps -a        //查看容器名
+
+docker logs 容器名
+```
+
+### 链码调试
+
+dev模式省去了编译链码镜像的过程
+
+在docker-compose.yaml中的peer.base里添加dev模式配置：
+
+- command:  peer node start --peer-chaincodedev=true
+- environment:  - CORE_CHAINCODE_MODE=dev
+
+```bash
+CORE_CHAINCODE_ID_NAME=assets:1.0.1 CORE_PEER_ADDRESS=0.0.0.0:27051 CORE_CHAINCODE_LOGGING_LEVEL=DEBUG go run -tags=nopkcs11 assetsExchange.go
+```
+
+## 外部服务剖析
+
+### 如何提供服务？
+决定于应用场景 终端用户
+* 智能硬件 socket/tcp 太阳能发电
+* 游戏、电商、社交 web/app http
+* 企业内部 rpc(grpc)
+
+### 如何选择SDK?
+* nodejs  4星
+* java       3星
+* golang  1星
+
+构造交易、发送交易、数据查询
+
+### SDK的模块
+
+#### 区块链管理
+* 通道创建&加入
+* 链码的安装、实例化、升级等
+* admin | 云服务提供商
+
+#### 数据查询
+* 区块
+* 交易
+* 区块浏览器 ethscan eospark block-explorer
+
+#### 区块链交互
+* 发起交易 invoke query
+
+#### 事件监听
+* 业务事件 SendEvent
+* 系统事件 block/trancastion
 
