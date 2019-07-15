@@ -12,7 +12,7 @@
 
 **nodist**是Windows下NodeJS版本管理器
 
-**remix**是
+**remix**是基于浏览器的在线Solidity编译器
 
 Windows本地安装remix时需要安装依赖
 

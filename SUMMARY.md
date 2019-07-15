@@ -30,10 +30,10 @@
     * [TCP/IP、UDP、HTTP协议](network/protocol.md)
     * [拜占庭将军问题](network/byzantine.md)
     * [共识算法](network/consensus.md)
-<!-- * [数据库](database/README.md)
-    * [LevelDB](database/leveldb.md)
-    * [CouchDB](database/couchdb.md)
-    * [Mysql](database/mysql.md) -->
+<!-- * [数据库](database/README.md) -->
+<!--     * [LevelDB](database/leveldb.md) -->
+<!--     * [CouchDB](database/couchdb.md) -->
+<!--     * [Mysql](database/mysql.md) -->
 * [Markdown](markdown/README.md)
     * [markdown语法](markdown/markdown.md)
     * [GitBook](markdown/gitbook.md)

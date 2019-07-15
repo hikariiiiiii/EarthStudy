@@ -52,6 +52,73 @@ PBFT要求共同维护一个状态，所有节点采取的行动一致。为此�
 
 PBFT在很多场景都有应用，在区块链场景中，一般适合于对强一致性有要求的私有链和联盟链场景。例如，在IBM主导的区块链超级账本项目中，PBFT是一个可选的共识协议。在Hyperledger的Fabric项目中，共识模块被设计成可插拔的模块，支持像PBFT、Raft等共识算法。
 
+## Paxos算法
+
+**Paxos算法**是莱斯利·兰伯特（英语：*Leslie Lamport*，LaTeX中的“La”）于1990年提出的一种基于消息传递且具有高度容错特性的一致性算法。
+
+分布式系统中的节点通信存在两种模型：**共享内存（Shared memory）**和**消息传递（Messages passing）**。基于消息传递通信模型的分布式系统，不可避免的会发生以下错误：进程可能会慢、被杀死或者重启，消息可能会延迟、丢失、重复，在基础Paxos场景中，先**不考虑**可能出现消息篡改即**拜占庭错误**的情况。Paxos算法解决的问题是在一个可能发生上述异常的分布式系统中如何就某个值达成一致，保证不论发生以上任何异常，都不会破坏决议的一致性。
+
+### 算法
+
+首先将议员的角色分为**proposers**，**acceptors**，和**learners**（允许身兼数职）。
+
+- proposers提出提案，提案信息包括提案编号和提议的value；
+
+- acceptor收到提案后可以接受（accept）提案，若提案获得多数acceptors的接受，则称该提案被批准（chosen）；
+
+- learners只能“学习”被批准的提案。
+
+划分角色后，就可以更精确的定义问题：
+
+1. 决议（value）只有在被proposers提出后才能被批准（未经批准的决议称为“提案（proposal）”）；
+2. 在一次Paxos算法的执行实例中，只批准（chosen）一个value；
+3. learners只能获得被批准（chosen）的value。
+
+> P1：一个acceptor必须接受（accept）第一次收到的提案。
+>
+> P2：一旦一个具有value v的提案被批准（chosen），那么之后批准（chosen）的提案必须具有value v。
+>
+> P2a：一旦一个具有value v的提案被批准（chosen），那么之后任何acceptor再次接受（accept）的提案必须具有value v。
+>
+> P2b：一旦一个具有value v的提案被批准（chosen），那么以后任何proposer提出的提案必须具有value v。
+>
+> P2c：如果一个编号为n的提案具有value v，那么存在一个多数派，要么他们中所有人都没有接受（accept）编号小于n 的任何提案，要么他们已经接受（accept）的所有编号小于n的提案中编号最大的那个提案具有value v。
+> 
+>P1a：当且仅当acceptor没有回应过编号大于n的prepare请求时，acceptor接受（accept）编号为n的提案。
+
+最终算法需遵循P2c与P1a
+
+### 决议的提出与批准
+
+通过一个决议分为两个阶段：
+
+1. prepare阶段：
+
+   1. proposer选择一个提案编号n并将prepare请求发送给acceptors中的一个多数派；
+   2. acceptor收到prepare消息后，如果提案的编号大于它已经回复的所有prepare消息，则acceptor将自己上次接受的提案回复给proposer，并承诺不再回复小于n的提案；同时通知编号小的proposer，提醒其中断这次提案。
+
+2. 批准阶段：
+
+   1. 当一个proposer收到了多数acceptors对prepare的回复后，就进入批准阶段。它要向回复prepare请求的acceptors发送accept请求，包括编号n和根据P2c决定的value（如果根据P2c没有已经接受的value，那么它可以自由决定value）。
+
+   2. 在不违背自己向其他proposer的承诺的前提下，acceptor收到accept请求后即接受这个请求。
+
+![1520952541330854](G:\CODELIFE\workspace\EarthStudy\network\1520952541330854.png)
+
+### 决议的发布
+
+一个显而易见的方法是当acceptors批准一个value时，将这个消息发送给所有learner。但是这个方法会导致消息量过大。
+
+由于假设没有Byzantine failures，learners可以通过别的learners获取已经通过的决议。因此acceptors只需将批准的消息发送给指定的某一个learner，其他learners向它询问已经通过的决议。这个方法降低了消息量，但是指定learner失效将引起系统失效。
+
+因此acceptors需要将accept消息发送给learners的一个子集，然后由这些learners去通知所有learners。
+
+但是由于消息传递的不确定性，可能会没有任何learner获得了决议批准的消息。当learners需要了解决议通过情况时，可以让一个proposer重新进行一次提案。注意一个learner可能兼任proposer。
+
+### Progress的保证
+
+根据上述过程当一个proposer发现存在编号更大的提案时将终止提案。这意味着提出一个编号更大的提案会终止之前的提案过程。如果两个proposer在这种情况下都转而提出一个编号更大的提案，就可能陷入活锁，违背了Progress的要求。这种情况下的解决方案是选举出一个leader，仅允许leader提出提案。但是由于消息传递的不确定性，可能有多个proposer自认为自己已经成为leader。Lamport在[The Part-Time Parliament](http://research.microsoft.com/users/lamport/pubs/lamport-paxos.pdf)一文中描述并解决了这个问题。
+
 ## Raft协议
 
 [**动画版Raft讲解**](http://thesecretlivesofdata.com/raft/	"动画版Raft讲解")
