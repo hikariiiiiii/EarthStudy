@@ -1,7 +1,5 @@
 # 开发
 
-
-
 ### **区块链结构**
 
 魔法数 Magic no
@@ -40,9 +38,13 @@
 
 
 
+**bitcoin core：**比特币核心（前身是bitcoin-QT，比特币钱包），带有图形界面
+
+**bitcoind：**比特币核心简洁版、命令行版
+
 ### **调用比特币API的方式**
 
-1. 通过bitcoind-qt
+1. 通过bitcoin core
 2. 通过bitcoind-cli
 3. 通过curl
 4. 通过语言库调用
