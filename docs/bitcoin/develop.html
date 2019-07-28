@@ -733,7 +733,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5F00;&#x53D1;"><b></b>&#x5F00;&#x53D1;</a></li><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;"><b></b>&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x8C03;&#x7528;&#x6BD4;&#x7279;&#x5E01;api&#x7684;&#x65B9;&#x5F0F;"><b></b>&#x8C03;&#x7528;&#x6BD4;&#x7279;&#x5E01;API&#x7684;&#x65B9;&#x5F0F;</a></li></ul></ul></ul></div><a href="#&#x5F00;&#x53D1;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5F00;&#x53D1;"><a name="&#x5F00;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5F00;&#x53D1;" class="plugin-anchor" href="#&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5F00;&#x53D1;"><b></b>&#x5F00;&#x53D1;</a></li><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;"><b></b>&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x8C03;&#x7528;&#x6BD4;&#x7279;&#x5E01;api&#x7684;&#x65B9;&#x5F0F;"><b></b>&#x8C03;&#x7528;&#x6BD4;&#x7279;&#x5E01;API&#x7684;&#x65B9;&#x5F0F;</a></li></ul></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#rpc&#x65B9;&#x6CD5;"><b></b>RPC&#x65B9;&#x6CD5;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#listunspent"><b></b>ListUnspent</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#createrawtransaction"><b></b>CreateRawTransaction</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#signrawtransaction"><b></b>SignRawTransaction</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#sendrawtransaction"><b></b>SendRawTransaction</a></li></ul></ul></div><a href="#&#x5F00;&#x53D1;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5F00;&#x53D1;"><a name="&#x5F00;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5F00;&#x53D1;" class="plugin-anchor" href="#&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;</h1>
 <h3 id="&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;"><a name="&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;" class="plugin-anchor" href="#&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x533A;&#x5757;&#x94FE;&#x7ED3;&#x6784;</strong></h3>
 <p>&#x9B54;&#x6CD5;&#x6570; Magic no</p>
 <p>&#x533A;&#x5757;&#x5927;&#x5C0F; Blocksize</p>
@@ -759,10 +759,147 @@
 <li>&#x901A;&#x8FC7;bitcoin core</li>
 <li>&#x901A;&#x8FC7;bitcoind-cli</li>
 <li>&#x901A;&#x8FC7;curl</li>
-<li>&#x901A;&#x8FC7;&#x8BED;&#x8A00;&#x5E93;&#x8C03;&#x7528; </li>
+<li>&#x901A;&#x8FC7;&#x8BED;&#x8A00;&#x5E93;&#x8C03;&#x7528;</li>
 </ol>
+<h1 id="rpc&#x65B9;&#x6CD5;"><a name="rpc&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#rpc&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="rpc&#x65B9;&#x6CD5;" class="plugin-anchor" href="#rpc&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>RPC&#x65B9;&#x6CD5;</strong></h1>
+<h2 id="listunspent"><a name="listunspent" class="anchor-navigation-ex-anchor" href="#listunspent"><i class="fa fa-link" aria-hidden="true"></i></a><a name="listunspent" class="plugin-anchor" href="#listunspent"><i class="fa fa-link" aria-hidden="true"></i></a>ListUnspent</h2>
+<p>The listunspent RPC returns an array of unspent transaction outputs belonging to this wallet. Note: as of Bitcoin Core 0.10.0, outputs affecting watch-only addresses will be returned; see the spendable field in the results described below.</p>
+<h4 id="&#x53C2;&#x6570;"><a name="&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li>MinimumConfirmations&#xFF1A;&#x4EA4;&#x6613;&#x6700;&#x5C11;&#x786E;&#x8BA4;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;1</li>
+<li>MaximumConfirmations&#xFF1A;&#x4EA4;&#x6613;&#x6700;&#x591A;&#x786E;&#x8BA4;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;9999999</li>
+<li>Addresses&#xFF1A;&#x4EA4;&#x6613;&#x8F93;&#x51FA;&#x4E2D;&#x5E94;&#x5F53;&#x5305;&#x542B;&#x7684;&#x5730;&#x5740;&#x6570;&#x7EC4;</li>
+</ul>
+<h4 id="&#x8FD4;&#x56DE;&#x503C;"><a name="&#x8FD4;&#x56DE;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FD4;&#x56DE;&#x503C;" class="plugin-anchor" href="#&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x503C;</h4>
+<p><code>listunspent</code>&#x8C03;&#x7528;&#x8FD4;&#x56DE;UTXO&#x63CF;&#x8FF0;&#x6570;&#x7EC4;&#xFF0C;&#x6210;&#x5458;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>txid&#xFF1A;&#x4EA4;&#x6613;id</li>
+<li>vout&#xFF1A;&#x8F93;&#x51FA;&#x5E8F;&#x53F7;</li>
+<li>address&#xFF1A;&#x5730;&#x5740;</li>
+<li>account&#xFF1A;&#x5173;&#x8054;&#x8D26;&#x6237;</li>
+<li>scriptPubKey&#xFF1A;&#x516C;&#x94A5;&#x811A;&#x672C;</li>
+<li>redeemScript&#xFF1A;&#x8D4E;&#x56DE;&#x811A;&#x672C;</li>
+<li>amount&#xFF1A;&#x91D1;&#x989D;</li>
+<li>confirmations&#xFF1A;&#x786E;&#x8BA4;&#x6570;</li>
+<li>spendable&#xFF1A;&#x662F;&#x5426;&#x53EF;&#x6D88;&#x8D39;&#xFF0C;&#x5F53;&#x94B1;&#x5305;&#x4E2D;&#x5305;&#x542B;&#x5BF9;&#x5E94;&#x7684;&#x79C1;&#x94A5;&#x65F6;&#xFF0C;&#x8BE5;&#x503C;&#x4E3A;true</li>
+<li>solvable&#xFF1A;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF0C;&#x94B1;&#x5305;&#x4E2D;&#x5305;&#x542B;&#x79C1;&#x94A5;&#x65F6;&#x8BE5;&#x503C;&#x88AB;&#x5FFD;&#x7565;</li>
+</ul>
+<h4 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x94B1;&#x5305;&#x4E2D;&#x5305;&#x542B;6~9999999&#x4E2A;&#x786E;&#x8BA4;&#x5E76;&#x4E14;&#x652F;&#x4ED8;&#x5230;&#x6307;&#x5B9A;&#x5730;&#x5740;&#x7684;UTXO&#xFF1A;</p>
+<pre><code>~$ bitcoin-cli -testnet listunspent 6 99999999 &apos;&apos;&apos;
+  [
+    &quot;mgnucj8nYqdrPFh2JfZSB1NmUThUGnmsqe&quot;
+  ]
+&apos;&apos;&apos;
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>[
+    {
+        &quot;txid&quot; : &quot;d54994ece1d11b19785c7248868696250ab195605b469632b7bd68130e880c9a&quot;,
+        &quot;vout&quot; : 1,
+        &quot;address&quot; : &quot;mgnucj8nYqdrPFh2JfZSB1NmUThUGnmsqe&quot;,
+        &quot;account&quot; : &quot;test label&quot;,
+        &quot;scriptPubKey&quot; : &quot;76a9140dfc8bafc8419853b34d5e072ad37d1a5159f58488ac&quot;,
+        &quot;amount&quot; : 0.00010000,
+        &quot;confirmations&quot; : 6210,
+        &quot;spendable&quot; : true,
+        &quot;solvable&quot; : true
+    }
+]
+</code></pre><h2 id="createrawtransaction"><a name="createrawtransaction" class="anchor-navigation-ex-anchor" href="#createrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a><a name="createrawtransaction" class="plugin-anchor" href="#createrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a>CreateRawTransaction</h2>
+<p><code>createrawtransaction</code>&#x8C03;&#x7528;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x672A;&#x7B7E;&#x540D;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4EA4;&#x6613;&#xFF0C;&#x8BE5;&#x4EA4;&#x6613;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;UTXO &#x8F6C;&#x8BA9;&#x7ED9;&#x6307;&#x5B9A;&#x7684;P2PKH&#x5730;&#x5740;&#x6216;P2SH&#x5730;&#x5740;&#x3002;&#x8BE5;&#x4EA4;&#x6613;&#x4E0D;&#x4F1A;&#x5B58;&#x50A8;&#x5728;&#x94B1;&#x5305;&#x91CC;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x53D1;&#x9001;&#x5230;&#x7F51;&#x7EDC; &#x4E2D;&#x3002;</p>
+<h4 id="&#x53C2;&#x6570;_1"><a name="&#x53C2;&#x6570;_1" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li>Inputs&#xFF1A;&#x4EA4;&#x6613;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;<ul>
+<li>txid&#xFF1A;UTXO&#x7684;&#x4EA4;&#x6613;id<ul>
+<li>vout&#xFF1A;UTXO&#x7684;&#x8F93;&#x51FA;&#x5E8F;&#x53F7;</li>
+<li>Sequence&#xFF1A;&#x5E8F;&#x5217;&#x53F7;&#xFF0C;&#x53EF;&#x9009;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Outputs&#xFF1A;&#x4EA4;&#x6613;&#x8F93;&#x51FA;&#x5BF9;&#x8C61;&#xFF0C;&#x952E;&#x4E3A;&#x5730;&#x5740;&#xFF0C;&#x503C;&#x4E3A;&#x91D1;&#x989D;</li>
+<li>Locktime&#xFF1A;&#x58F0;&#x660E;&#x8BE5;&#x4EA4;&#x6613;&#x751F;&#x6548;&#x7684;&#x6700;&#x65E9;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x9009;</li>
+</ul>
+<h4 id="&#x8FD4;&#x56DE;&#x503C;_1"><a name="&#x8FD4;&#x56DE;&#x503C;_1" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x503C;_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FD4;&#x56DE;&#x503C;" class="plugin-anchor" href="#&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x503C;</h4>
+<p><code>createrawtransaction</code>&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x751F;&#x6210;&#x7684;&#x672A;&#x7B7E;&#x540D;&#x4EA4;&#x6613;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_1"><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_1" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x672A;&#x7B7E;&#x540D;&#x7684;&#x88F8;&#x4EA4;&#x6613;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<pre><code>~$ bitcoin-cli -testnet createrawtransaction &apos;&apos;&apos;
+  [
+    {
+      &quot;txid&quot;: &quot;1eb590cd06127f78bf38ab4140c4cdce56ad9eb8886999eb898ddf4d3b28a91d&quot;,
+      &quot;vout&quot; : 0
+    }
+  ]&apos;&apos;&apos; &apos;{ &quot;mgnucj8nYqdrPFh2JfZSB1NmUThUGnmsqe&quot;: 0.13 }&apos;
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>01000000011da9283b4ddf8d89eb996988b89ead56cecdc44041ab38bf787f12\
+06cd90b51e0000000000ffffffff01405dc600000000001976a9140dfc8bafc8\
+419853b34d5e072ad37d1a5159f58488ac00000000
+</code></pre><h2 id="signrawtransaction"><a name="signrawtransaction" class="anchor-navigation-ex-anchor" href="#signrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a><a name="signrawtransaction" class="plugin-anchor" href="#signrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a>SignRawTransaction</h2>
+<p><code>signrawtransaction</code>&#x8C03;&#x7528;&#x4F7F;&#x7528;&#x94B1;&#x5305;&#x4E2D;&#x7684;&#x79C1;&#x94A5;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4EA4;&#x6613;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x7B7E;&#x540D;&#x3002;</p>
+<h4 id="&#x53C2;&#x6570;_2"><a name="&#x53C2;&#x6570;_2" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li>Transaction&#xFF1A;&#x8981;&#x7B7E;&#x540D;&#x7684;&#x4EA4;&#x6613;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>Dependencies&#xFF1A;&#x4F9D;&#x8D56;&#x7684;UTXO&#x8BE6;&#x60C5;&#x6570;&#x7EC4;&#xFF0C;&#x6210;&#x5458;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;<ul>
+<li>txid&#xFF1A;UTXO&#x6240;&#x5728;&#x7684;&#x4EA4;&#x6613;ID<ul>
+<li>vout&#xFF1A;UTXO&#x5728;&#x8F93;&#x51FA;&#x4E2D;&#x7684;&#x5E8F;&#x53F7;</li>
+<li>scriptPubKey&#xFF1A;&#x8F93;&#x51FA;&#x7684;&#x516C;&#x94A5;&#x811A;&#x672C;</li>
+<li>redeemScript&#xFF1A;&#x5982;&#x679C;&#x516C;&#x94A5;&#x811A;&#x672C;&#x5BF9;&#x5E94;&#x4E8E;&#x811A;&#x672C;&#x54C8;&#x5E0C;&#xFF0C;&#x5219;&#x672C;&#x5B57;&#x6BB5;&#x6307;&#x5411;&#x5B8C;&#x6574;&#x7684;&#x8D4E;&#x56DE;&#x811A;&#x672C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PrivateKeys&#xFF1A;&#x7528;&#x4E8E;&#x7B7E;&#x540D;&#x7684;&#x79C1;&#x94A5;&#x6570;&#x7EC4;</li>
+<li>SigHashType&#xFF1A;&#x7B7E;&#x540D;&#x54C8;&#x5E0C;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;<ul>
+<li>ALL</li>
+<li>NONE</li>
+<li>SINGLE</li>
+<li>ALL | ANYONECANPAY</li>
+<li>NONE | ANYONECANPAY</li>
+<li>SINGLE | ANYONECANPAY</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x8FD4;&#x56DE;&#x503C;_2"><a name="&#x8FD4;&#x56DE;&#x503C;_2" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x503C;_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FD4;&#x56DE;&#x503C;" class="plugin-anchor" href="#&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x503C;</h4>
+<p><code>signrawtransaction</code>&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7B7E;&#x540D;&#x540E;&#x7684;&#x4EA4;&#x6613;&#x4FE1;&#x606F;&#xFF0C;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>hex&#xFF1A; &#x7B7E;&#x540D;&#x540E;&#x7684;&#x4EA4;&#x6613;&#x5E8F;&#x5217;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;16&#x8FDB;&#x5236;&#x8868;&#x793A;</li>
+<li>complete&#xFF1A;&#x4EA4;&#x6613;&#x662F;&#x5426;&#x5177;&#x5907;&#x5B8C;&#x6574;&#x7B7E;&#x540D;&#xFF0C;false&#x8868;&#x793A;&#x8FD8;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x7B7E;&#x540D;</li>
+</ul>
+<h4 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_2"><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_2" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h4>
+<p>&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x79C1;&#x94A5;&#x8FDB;&#x884C;&#x88F8;&#x4EA4;&#x6613;&#x7B7E;&#x540D;&#xFF1A;</p>
+<pre><code>~$ bitcoin-cli -testnet signrawtransaction 01000000011da9283b4ddf8d\
+89eb996988b89ead56cecdc44041ab38bf787f1206cd90b51e0000000000ffff\
+ffff01405dc600000000001976a9140dfc8bafc8419853b34d5e072ad37d1a51\
+59f58488ac00000000
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>{
+    &quot;hex&quot; : &quot;01000000011da9283b4ddf8d89eb996988b89ead56cecdc44041ab38bf787f1206cd90b51e000000006a47304402200ebea9f630f3ee35fa467ffc234592c79538ecd6eb1c9199eb23c4a16a0485a20220172ecaf6975902584987d295b8dddf8f46ec32ca19122510e22405ba52d1f13201210256d16d76a49e6c8e2edc1c265d600ec1a64a45153d45c29a2fd0228c24c3a524ffffffff01405dc600000000001976a9140dfc8bafc8419853b34d5e072ad37d1a5159f58488ac00000000&quot;,
+    &quot;complete&quot; : true
+}
+</code></pre><h2 id="sendrawtransaction"><a name="sendrawtransaction" class="anchor-navigation-ex-anchor" href="#sendrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sendrawtransaction" class="plugin-anchor" href="#sendrawtransaction"><i class="fa fa-link" aria-hidden="true"></i></a>SendRawTransaction</h2>
+<p><code>sendrawtransaction</code>&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x6307;&#x5B9A;&#x4EA4;&#x6613;&#x5E76;&#x5C06;&#x5176;&#x5E7F;&#x64AD;&#x5230;P2P&#x7F51;&#x7EDC;&#x4E2D;&#x3002;</p>
+<h4 id="&#x53C2;&#x6570;_3"><a name="&#x53C2;&#x6570;_3" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;_3"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li>Transaction&#xFF1A;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x4EA4;&#x6613;&#x7801;&#x6D41;&#xFF0C;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>AllowHighFees&#xFF1A;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x9AD8;&#x989D;&#x624B;&#x7EED;&#x8D39;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;false</li>
+</ul>
+<h4 id="&#x8FD4;&#x56DE;&#x503C;_3"><a name="&#x8FD4;&#x56DE;&#x503C;_3" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x503C;_3"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FD4;&#x56DE;&#x503C;" class="plugin-anchor" href="#&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x503C;</h4>
+<p>&#x6210;&#x529F;&#x65F6;<code>sendrawtransaction</code>&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x4EA4;&#x6613;ID&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_3"><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;_3" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;_3"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h4>
+<p>&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x9A8C;&#x8BC1;&#x6307;&#x5B9A;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x7B7E;&#x540D;&#x4EA4;&#x6613;&#x5E76;&#x5C06;&#x5176;&#x5E7F;&#x64AD;&#x81F3;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre><code>~$ bitcoin-cli -testnet sendrawtransaction 01000000011da9283b4ddf8d\
+89eb996988b89ead56cecdc44041ab38bf787f1206cd90b51e000000006a4730\
+4402200ebea9f630f3ee35fa467ffc234592c79538ecd6eb1c9199eb23c4a16a\
+0485a20220172ecaf6975902584987d295b8dddf8f46ec32ca19122510e22405\
+ba52d1f13201210256d16d76a49e6c8e2edc1c265d600ec1a64a45153d45c29a\
+2fd0228c24c3a524ffffffff01405dc600000000001976a9140dfc8bafc84198\
+53b34d5e072ad37d1a5159f58488ac00000000
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>f5a5ce5988cc72b9b90e8d1d6c910cda53c88d2175177357cc2f2cf0899fbaad
+</code></pre><p><img src="12867278-9f907ea5664e70e5.webp" alt="12867278-9f907ea5664e70e5"></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; heyaguang.com 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-07-18 14:14:40
+2019-07-25 08:43:16
 </span></footer>
                                 
                                 </section>
@@ -806,7 +943,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"开发","level":"1.4.6","depth":2,"next":{"title":"以太坊","level":"1.5","depth":1,"path":"ethereum/README.md","ref":"ethereum/README.md","articles":[{"title":"运行机制","level":"1.5.1","depth":2,"path":"ethereum/operation.md","ref":"ethereum/operation.md","articles":[]},{"title":"以太坊钱包","level":"1.5.2","depth":2,"path":"ethereum/ethwallet.md","ref":"ethereum/ethwallet.md","articles":[]},{"title":"Solidity","level":"1.5.3","depth":2,"path":"ethereum/solidity.md","ref":"ethereum/solidity.md","articles":[]},{"title":"开发","level":"1.5.4","depth":2,"path":"ethereum/develop.md","ref":"ethereum/develop.md","articles":[]}]},"previous":{"title":"应用","level":"1.4.5","depth":2,"path":"bitcoin/apply.md","ref":"bitcoin/apply.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","-livereload","-sharing","search-plus","simple-page-toc","advanced-emoji","anchors","include-codeblock","ace","emphasize","katex","splitter","tbfed-pagefooter","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","todo","-git-author","alerts","include-csv"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © heyaguang.com 2019","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-codeblock":{"template":"ace","unindent":"true","theme":"monokai"}},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"showLevel":false,"showGoTop":true,"printLog":false,"multipleH1":true,"multipleH2":true,"associatedWithSummary":true,"multipleH3":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"alerts":{},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"Hikari","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"","language":"zh-hans","links":{},"gitbook":"3.2.3","description":""},"file":{"path":"bitcoin/develop.md","mtime":"2019-07-18T06:14:40.058Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-21T15:42:21.937Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"开发","level":"1.4.6","depth":2,"next":{"title":"以太坊","level":"1.5","depth":1,"path":"ethereum/README.md","ref":"ethereum/README.md","articles":[{"title":"运行机制","level":"1.5.1","depth":2,"path":"ethereum/operation.md","ref":"ethereum/operation.md","articles":[]},{"title":"以太坊钱包","level":"1.5.2","depth":2,"path":"ethereum/ethwallet.md","ref":"ethereum/ethwallet.md","articles":[]},{"title":"Solidity","level":"1.5.3","depth":2,"path":"ethereum/solidity.md","ref":"ethereum/solidity.md","articles":[]},{"title":"开发","level":"1.5.4","depth":2,"path":"ethereum/develop.md","ref":"ethereum/develop.md","articles":[]}]},"previous":{"title":"应用","level":"1.4.5","depth":2,"path":"bitcoin/apply.md","ref":"bitcoin/apply.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","-livereload","-sharing","search-plus","simple-page-toc","advanced-emoji","anchors","include-codeblock","ace","emphasize","katex","splitter","tbfed-pagefooter","expandable-chapters-small","sectionx","local-video","anchor-navigation-ex","todo","-git-author","alerts","include-csv"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © heyaguang.com 2019","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-codeblock":{"template":"ace","unindent":"true","theme":"monokai"}},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"showLevel":false,"showGoTop":true,"printLog":false,"multipleH1":true,"multipleH2":true,"associatedWithSummary":true,"multipleH3":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true}},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"alerts":{},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"Hikari","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"","language":"zh-hans","links":{},"gitbook":"3.2.3","description":""},"file":{"path":"bitcoin/develop.md","mtime":"2019-07-25T00:43:16.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-28T06:24:41.079Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
