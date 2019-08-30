@@ -32,7 +32,7 @@ Postman是接口调试工具，是Chrome的插件之一。一个HTTP请求包括
 
 # **二、基本功能**
 
-![5ca8090a0001f3dc09090495.jpg](5ca8090a0001f3dc05000273.jpg)
+![5ca8090a0001f3dc09090495.jpg](5ca8090a0001f3dc09090495.jpg)
 
 ### 1、工作区
 
@@ -54,7 +54,7 @@ Postman变量有四种：Data（数据）、Local（局部）、Environment（�
 
 1）环境变量
 
-![5ca8095400015c0208960553.jpg](5ca8095400015c0205000309.jpg)
+![5ca8095400015c0208960553.jpg](5ca8095400015c0208960553.jpg)
 
 环境变量被设置为键值对，键为变量的名字。
 
@@ -70,7 +70,7 @@ Reset All：把两个值都改成INITIAL VALUE
 
 2）全局变量
 
-![5ca809620001b03908990366.jpg](5ca809620001b03905000204.jpg)
+![5ca809620001b03908990366.jpg](5ca809620001b03908990366.jpg)
 
 全局变量提供了一组总是有效的变量。
 
@@ -106,13 +106,13 @@ ps：如果是get，请求参数直接写在url后，用？连接，如 http://s
 
 如果是post，则请求添加到body中
 
-![5ca809770001a2e709090209.jpg](5ca809770001a2e705000115.jpg)
+![5ca809770001a2e709090209.jpg](5ca809770001a2e709090209.jpg)
 
 有15种请求方法，常用2种：POST、GET。可下拉选择、删除。
 
 URL需要手动编码、解码。
 
-![5ca809860001cf8009100545.jpg](5ca809860001cf8005000300.jpg)
+![5ca809860001cf8009100545.jpg](5ca809860001cf8009100545.jpg)
 
 #### 1）Parames
 
@@ -130,7 +130,7 @@ URL需要手动编码、解码。
 
 有10种授权方式，输入相关信息后，点击Preview Request/send，则在Headers中会自动生成一项Authorization的键值对。
 
-![5ca809a3000122cb09200368.jpg](5ca809a3000122cb05000200.jpg)
+![5ca809a3000122cb09200368.jpg](5ca809a3000122cb09200368.jpg)
 
 a、Inherit auth from parent：从父级继承身份验证。默认选中。
 
@@ -168,7 +168,7 @@ User-Agent：浏览器类型，如果Servlet返回的内容与浏览器类型有
 
 可以添加一些常用的headers在Resets中。位置：Resets-Manage Resets。
 
-**![5ca809d6000133e309050535.jpg](5ca809d6000133e305000296.jpg)**
+**![5ca809d6000133e309050535.jpg](5ca809d6000133e309050535.jpg)**
 
 #### 4）Body
 
@@ -176,11 +176,11 @@ User-Agent：浏览器类型，如果Servlet返回的内容与浏览器类型有
 
 a、form-data:  表单数据。请求的时候会把表单以key-value的形式（key，value）上传到服务端，服务端在根据key获取相应的value。
 
-![5ca809e70001ec8809100440.jpg](5ca809e70001ec8805000242.jpg)
+![5ca809e70001ec8809100440.jpg](5ca809e70001ec8809100440.jpg)
 
 form-data 也可以用于上传文件，但是在上传文件的时候，必须要选择file。
 
-![5ca80a2300019bb509090246.jpg](5ca80a2300019bb505000136.jpg)
+![5ca80a2300019bb509090246.jpg](5ca80a2300019bb509090246.jpg)
 
 
 
@@ -188,7 +188,7 @@ b、x-www-form-urlencoded：这个会把表单内的数据转换为键值对，�
 
 ps：和form-data都是表单，区别是在请求上的显示不同。
 
-![5ca80a450001b1e907330375.jpg](5ca80a450001b1e905000256.jpg)
+![5ca80a450001b1e907330375.jpg](5ca80a450001b1e907330375.jpg)
 
 
 
@@ -206,13 +206,13 @@ ps：Tests也可以创建或销毁环境变量与全局变量，但是是在请�
 
 设置响应构建器中的cookies参数。
 
-![5ca80a5a0001228f09000556.jpg](5ca80a5a0001228f05000309.jpg)
+![5ca80a5a0001228f09000556.jpg](5ca80a5a0001228f09000556.jpg)
 
 #### 7）Code
 
 用来查看当前请求（请求头和请求体），可切换不同编程语言。
 
-![5ca80a6e0001da5a09070589.jpg](5ca80a6e0001da5a05000325.jpg)
+![5ca80a6e0001da5a09070589.jpg](5ca80a6e0001da5a09070589.jpg)
 
 #### 8）Comments
 
@@ -226,13 +226,13 @@ ps：Tests也可以创建或销毁环境变量与全局变量，但是是在请�
 
 一个API响应器包括Boay、Headers、status code三部分。
 
-![5ca80a920001b2bc09050190.jpg](5ca80a920001b2bc05000105.jpg)
+![5ca80a920001b2bc09050190.jpg](5ca80a920001b2bc09050190.jpg)
 
 #### 1）保存响应内容
 
 点击save-自定义响应名称后点击 save Example-点击相应请求，右侧有Examples，点击可见之前的响应内容
 
-![5ca80aa100011b7409110543.jpg](5ca80aa100011b7405000299.jpg)
+![5ca80aa100011b7409110543.jpg](5ca80aa100011b7409110543.jpg)
 
 #### 2）Body
 
@@ -244,7 +244,7 @@ b、Raw：显示未处理的数据。
 
 c、Preview：自动解析HTML页面，即以界面形式展示响应结果。
 
-![5ca80ab100018af909440337.jpg](5ca80ab100018af905000179.jpg)
+![5ca80ab100018af909440337.jpg](5ca80ab100018af909440337.jpg)
 
 #### 3）Cookies
 
@@ -278,7 +278,7 @@ Body中的状态码，是程序员自己定义的，是为了让接口使用者�
 
 ### 7、设置
 
-![5ca80b0f000119a408390663.jpg](5ca80b0f000119a405000396.jpg)
+![5ca80b0f000119a408390663.jpg](5ca80b0f000119a408390663.jpg)
 
 1）General
 
@@ -396,7 +396,7 @@ ps：执行方式是一个请求结束后执行下一个请求。不是并发执
 
 请求响应器下的Tests。右侧SNIPPETS（片段）有基本语句，修改参数即可使用。
 
-![5ca80be50001b00009110484.jpg](5ca80be50001b00005000266.jpg)
+![5ca80be50001b00009110484.jpg](5ca80be50001b00009110484.jpg)
 
 2、示例
 
@@ -424,7 +424,7 @@ pm.response.to.have.status(200);
 
 这句代码意思是：名称为"Status code is 200"的断言中，判断responseCode对象的HTTP状态码是否为200。
 
-![5ca80bf500013f9108940328.jpg](5ca80bf500013f9105000184.jpg)
+![5ca80bf500013f9108940328.jpg](5ca80bf500013f9108940328.jpg)
 
 第二步，点击SNIPPETS中“Response body：Contains string”：
 
@@ -486,7 +486,7 @@ pm.expect(jsonData.message).to.eql("Success");
 
 入口：快捷键Alt+Ctrl+C；顶部菜单-View-Show Postnam Console
 
-![5ca80c920001bf6f09060489.jpg](5ca80c920001bf6f05000270.jpg)
+![5ca80c920001bf6f09060489.jpg](5ca80c920001bf6f09060489.jpg)
 
 # **六、脚本录制**
 
@@ -496,7 +496,7 @@ pm.expect(jsonData.message).to.eql("Success");
 
 顶部菜单-Capture API requests with Postman，设置端口号（默认值为5555）、选择输出位置。
 
-![5ca80ca30001030b08890662.jpg](5ca80ca30001030b05000373.jpg)
+![5ca80ca30001030b08890662.jpg](5ca80ca30001030b08890662.jpg)
 
 3、设置PC代理
 
@@ -506,7 +506,7 @@ pm.expect(jsonData.message).to.eql("Success");
 
 host：5555（在Poatman中设置的端口号）
 
-![5ca80cd200019de209030502.jpg](5ca80cd200019de205000278.jpg)
+![5ca80cd200019de209030502.jpg](5ca80cd200019de209030502.jpg)
 
 4、打开浏览器，访问接口，操作完成后在之前选择的保存位置有对应的request。
 
@@ -516,7 +516,7 @@ host：5555（在Poatman中设置的端口号）
 
 测试集-更多-导出-Collection v2.1（默认文件格式）-Export
 
-![5ca80d0b00015cbf09080664.jpg](5ca80d0b00015cbf05000366.jpg)
+![5ca80d0b00015cbf09080664.jpg](5ca80d0b00015cbf09080664.jpg)
 
 ps：不创建测试集的话，抓到的请求就会在History中显示。
 
@@ -533,7 +533,7 @@ postman.setEnvironmentVariable("msg", jsonData.msg);
 
 获取响应的数据中 msg 的值（jsonData.msg），然后赋值给字符“msg”  如: 响应数据是 "msg": "Custom error message notification"
 
-![5ca80d870001386909070601.jpg](5ca80d870001386905000332.jpg)
+![5ca80d870001386909070601.jpg](5ca80d870001386909070601.jpg)
 
 在获取关联参数的时候可以设置一个environment，把获取的值放进去，给下个请求调用。
 
