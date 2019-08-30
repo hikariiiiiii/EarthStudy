@@ -39,3 +39,6 @@
 * [Markdown](markdown/README.md)
     * [markdown语法](markdown/markdown.md)
     * [GitBook](markdown/gitbook.md)
+* [PostMan](postman/README.md)
+    * [中文教程](postman/guide.md)
+    * [常用技巧](postman/skills.md)
